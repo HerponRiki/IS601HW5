@@ -20,12 +20,12 @@ class Calculation:
 
     # Method to perform the calculation stored in this object
     def perform(self) -> Decimal:
-        "Perform the stored calculation and return the result."
+        """Perform the stored calculation and return the result."""
         # Returns result of a and b
         return self.operation(self.a, self.b)
 
     # Special method to provide a string representation of the Calculation instance
     def __repr__(self):
-        "Return a simplified string representation of the calculation."
+        """Return a simplified string representation of the calculation."""
         # This method makes it easier to understand what the Calculation object represents when printed or logged
         return f"Calculation({self.a}, {self.b}, {self.operation.__name__})"
