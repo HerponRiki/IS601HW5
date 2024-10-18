@@ -7,7 +7,7 @@ from typing import Callable
 class Calculator:
     @staticmethod
     def _perform_operation(a: Decimal, b: Decimal, operation: Callable[[Decimal, Decimal], Decimal]) -> Decimal:
-        """Create and perform a calculation, then return the result."""
+        "Create and perform a calculation, then return the result."
         calculation = Calculation(a, b, operation)
         Calculations.add_calculation(calculation)  # Assuming add_calculation is a method to append the calculation
         return calculation.perform()
