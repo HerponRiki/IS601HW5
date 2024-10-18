@@ -2,6 +2,7 @@ import sys
 from calculator import Calculator
 from decimal import Decimal, InvalidOperation
 
+#Calls all the operation functions
 def calculate_and_print(a, b, operation_name):
     operation_mappings = {
         'add': Calculator.add,
