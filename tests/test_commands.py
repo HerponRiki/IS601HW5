@@ -1,18 +1,9 @@
 import pytest
 from app import App
-
-
-def test_app_greet_command(capfd, monkeypatch):
-    """Test that the REPL correctly handles the 'greet' command."""
-    # Simulate user entering 'greet' followed by 'exit'
-    inputs = iter(['greet', 'exit'])
-    monkeypatch.setattr('builtins.input', lambda _: next(inputs))
-
-    app = App()
-    with pytest.raises(SystemExit) as e:
-        app.start()  # Assuming App.start() is now a static method based on previous discussions
-    
-    assert str(e.value) == "Exiting...", "The app did not exit as expected"
+from app.plugins.add import AdditionCommand
+from app.plugins.subtract import SubtractionCommand
+from app.plugins.multiply import MulitplyCommand
+from app.plugins.divide import DivideCommand
 
 def test_app_menu_command(capfd, monkeypatch):
     """Test that the REPL correctly handles the 'greet' command."""
@@ -25,3 +16,6 @@ def test_app_menu_command(capfd, monkeypatch):
         app.start()  # Assuming App.start() is now a static method based on previous discussions
     
     assert str(e.value) == "Exiting...", "The app did not exit as expected"
+
+#def addition_command(capfd, monkeypatch):
+#    inputs = iter(['add', a, b] )

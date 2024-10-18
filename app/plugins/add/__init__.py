@@ -1,7 +1,10 @@
+import logging
+
 from app.commands import Command
-from calculator import operations
+from calculator import Calculator
 
 class AdditionCommand(Command):
-    def execute(self):
-        return operations.add
+    def execute(self, a, b):
+        logging.info("Addition")
+        print(Calculator.add(a, b))
     
